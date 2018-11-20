@@ -13,10 +13,11 @@ client.settings = new Enmap({
 });
 defaultS = {
 	prefix: 'can ',
-	modRole: 'false',
-	logs: 'false',
-	welcome: 'false',
-	leave: 'false',
+	modRole: ':no_entry_sign:',
+	muteRole: ':no_entry_sign:',
+	logs: ':no_entry_sign:',
+	greeting: ':no_entry_sign:',
+	farewell: ':no_entry_sign:',
 };
 
 fs.readdir('./events/', (err, files) => {
@@ -63,6 +64,16 @@ fs.readdir('./commands/moderation', (err, files) => {
 	files.forEach(file => {
 		if (!file.endsWith('.js')) return;
 		let props = require(`./commands/moderation/${file}`);
+		let commandName = file.split('.')[0];
+		client.commands.set(commandName, props);
+	});
+});
+
+fs.readdir('./commands/utility', (err, files) => {
+	if (err) return console.error(err);
+	files.forEach(file => {
+		if (!file.endsWith('.js')) return;
+		let props = require(`./commands/utility/${file}`);
 		let commandName = file.split('.')[0];
 		client.commands.set(commandName, props);
 	});
