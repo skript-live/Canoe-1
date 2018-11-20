@@ -1,3 +1,5 @@
+
+
 module.exports.run = async (client, message, args) => {
 	const conf = client.settings.ensure(message.guild.id, defaultS);
 	if (!message.member.hasPermission('MANAGE_SERVER')) {
