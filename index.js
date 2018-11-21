@@ -14,7 +14,7 @@ client.settings = new Enmap({
 defaultS = {
 	prefix: 'can ',
 	modRole: ':no_entry_sign:',
-	muteRole: ':no_entry_sign:',
+	mutedRole: ':no_entry_sign:',
 	logs: ':no_entry_sign:',
 	greeting: ':no_entry_sign:',
 	farewell: ':no_entry_sign:',
