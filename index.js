@@ -13,11 +13,11 @@ client.settings = new Enmap({
 });
 defaultS = {
 	prefix: 'can ',
-	modRole: ':no_entry_sign:',
-	mutedRole: ':no_entry_sign:',
-	logs: ':no_entry_sign:',
-	greeting: ':no_entry_sign:',
-	farewell: ':no_entry_sign:',
+	modRole: 'none',
+	mutedRole: 'none',
+	logs: 'none',
+	greeting: 'none',
+	farewell: 'none',
 };
 
 fs.readdir('./events/', (err, files) => {
@@ -91,3 +91,4 @@ client.on('error', console.error);
 client.on('promiseRejection', console.error);
 
 client.login(client.config.token);
+thanks sdf
